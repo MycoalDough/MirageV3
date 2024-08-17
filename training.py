@@ -214,6 +214,9 @@ m = model.to(device)
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
 
+device = torch.is_cuda_available() else "cpu"
+print(device)
+
 for iter in range(max_iters):
     print(iter)
     #if iter % eval_iters == 0 and iter != 0:
